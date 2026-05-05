@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="180" viewBox="0 0 220 180" role="img" aria-labelledby="title">
+  <title id="title">Illustration of branded paper bags</title>
+  <rect width="220" height="180" rx="28" fill="#eaf6f0"/>
+  <path d="M61 60h98l-9 90H70L61 60Z" fill="#ffffff" stroke="#245f47" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M87 68V50c0-14 11-24 24-24s24 10 24 24v18" fill="none" stroke="#2f7d5c" stroke-width="7" stroke-linecap="round"/>
+  <path d="M92 99h37v31H92z" fill="#d9a441" rx="8"/>
+  <path d="M101 114h20" stroke="#245f47" stroke-width="5" stroke-linecap="round"/>
+</svg>

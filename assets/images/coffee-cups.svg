@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="180" viewBox="0 0 220 180" role="img" aria-labelledby="title">
+  <title id="title">Illustration of branded coffee cups</title>
+  <rect width="220" height="180" rx="28" fill="#eaf6f0"/>
+  <path d="M72 48h50l-8 94H82L72 48Z" fill="#ffffff" stroke="#245f47" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M66 38h62v18H66z" fill="#2f7d5c" rx="6"/>
+  <path d="M89 82h18v18H89z" fill="#d9a441" rx="4"/>
+  <path d="M124 64h38l-7 78h-25l-6-78Z" fill="#ffffff" stroke="#245f47" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M119 55h48v16h-48z" fill="#8ab7a4" rx="6"/>
+  <path d="M137 91h13v13h-13z" fill="#2f7d5c" rx="3"/>
+</svg>
