@@ -39,6 +39,29 @@ const quantityDiscounts = {
   5000: 0.2
 };
 
+const countryCurrencies = {
+  Denmark: "DKK",
+  Sweden: "SEK",
+  Germany: "EUR",
+  Netherlands: "EUR",
+  "Other EU country": "EUR"
+};
+
+const currencySettings = {
+  DKK: {
+    locale: "da-DK",
+    rateFromDkk: 1
+  },
+  SEK: {
+    locale: "sv-SE",
+    rateFromDkk: 1.55
+  },
+  EUR: {
+    locale: "de-DE",
+    rateFromDkk: 0.134
+  }
+};
+
 const state = {
   product: "coffee-cups",
   size: "",
@@ -46,6 +69,7 @@ const state = {
   printColors: "",
   designHelp: false,
   deliveryCountry: "",
+  currency: "DKK",
   email: "",
   notes: ""
 };
@@ -71,6 +95,7 @@ function cacheElements() {
   elements.printColors = document.querySelectorAll("input[name='printColors']");
   elements.designHelp = document.querySelector("#designHelp");
   elements.deliveryCountry = document.querySelector("#deliveryCountry");
+  elements.currency = document.querySelector("#currency");
   elements.email = document.querySelector("#email");
   elements.notes = document.querySelector("#notes");
   elements.submitQuote = document.querySelector("#submitQuote");
@@ -107,6 +132,9 @@ function bindEvents() {
     field.addEventListener("change", handleFormChange);
     field.addEventListener("blur", () => handleFieldBlur(field));
   });
+
+  elements.deliveryCountry.addEventListener("change", handleDeliveryCountryChange);
+  elements.currency.addEventListener("change", handleCurrencyChange);
 
   elements.printColors.forEach((radio) => {
     radio.addEventListener("change", () => {
@@ -157,6 +185,19 @@ function handleFieldBlur(field) {
   validateForm();
 }
 
+function handleDeliveryCountryChange() {
+  const defaultCurrency = countryCurrencies[elements.deliveryCountry.value] || "DKK";
+  elements.currency.value = defaultCurrency;
+  state.currency = defaultCurrency;
+  syncStateFromForm();
+  updateSummary();
+}
+
+function handleCurrencyChange() {
+  state.currency = elements.currency.value;
+  updateSummary();
+}
+
 function syncStateFromForm() {
   state.product = elements.product.value;
   state.size = elements.size.value;
@@ -164,6 +205,7 @@ function syncStateFromForm() {
   state.printColors = document.querySelector("input[name='printColors']:checked")?.value || "";
   state.designHelp = elements.designHelp.checked;
   state.deliveryCountry = elements.deliveryCountry.value;
+  state.currency = elements.currency.value;
   state.email = elements.email.value.trim();
   state.notes = elements.notes.value.trim();
 }
@@ -286,11 +328,16 @@ function getPrintColorLabel(value) {
 }
 
 function formatCurrency(value) {
-  return new Intl.NumberFormat("en-DK", {
+  const currency = currencySettings[state.currency] ? state.currency : "DKK";
+  const settings = currencySettings[currency];
+  const convertedValue = value * settings.rateFromDkk;
+
+  return new Intl.NumberFormat(settings.locale, {
     style: "currency",
-    currency: "DKK",
-    maximumFractionDigits: value % 1 === 0 ? 0 : 2
-  }).format(value);
+    currency,
+    currencyDisplay: "code",
+    maximumFractionDigits: convertedValue % 1 === 0 ? 0 : 2
+  }).format(convertedValue);
 }
 
 document.addEventListener("DOMContentLoaded", init);

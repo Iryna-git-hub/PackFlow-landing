@@ -590,7 +590,9 @@ a:hover {
 .customizer-form legend {
   margin-bottom: 0.5rem;
   color: $brand-ink;
+  font-size: 1rem;
   font-weight: 800;
+  line-height: 1.5;
 }
 
 .form-control,
@@ -721,12 +723,28 @@ a:hover {
   font-weight: 850;
 }
 
-.summary-badge {
-  padding: 0.45rem 0.7rem;
+.currency-selector {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 110px;
+}
+
+.currency-label {
+  color: $brand-muted;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.currency-selector .form-select {
+  min-height: 38px;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
   color: $brand-green-dark;
-  background: $brand-mint;
+  background-color: $brand-mint;
+  border-color: rgba(47, 125, 92, 0.22);
   border-radius: 999px;
-  font-size: 0.8rem;
   font-weight: 850;
 }
 

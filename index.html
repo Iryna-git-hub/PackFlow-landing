@@ -236,7 +236,14 @@
                     <span class="eyebrow">Live price</span>
                     <h2 id="summaryTitle">Order Summary</h2>
                   </div>
-                  <span class="summary-badge">DKK</span>
+                  <div class="currency-selector">
+                    <label for="currency" class="currency-label">Currency</label>
+                    <select class="form-select form-select-sm" id="currency" name="currency" aria-label="Select currency">
+                      <option value="DKK">DKK</option>
+                      <option value="SEK">SEK</option>
+                      <option value="EUR">EUR</option>
+                    </select>
+                  </div>
                 </div>
                 <dl class="summary-list">
                   <div><dt>Selected product</dt><dd id="summaryProduct">Custom Coffee Cups</dd></div>

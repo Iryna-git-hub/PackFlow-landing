@@ -1350,3 +1350,32 @@ a:hover {
     width: 27%;
   }
 }
+.currency-selector {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 110px;
+}
+
+.currency-label {
+  color: #65758b;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.currency-selector .form-select {
+  min-height: 38px;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  color: #245f47;
+  background-color: #eaf6f0;
+  border-color: rgba(47, 125, 92, 0.22);
+  border-radius: 999px;
+  font-weight: 850;
+}
+.form-label,
+.customizer-form legend {
+  font-size: 1rem;
+  line-height: 1.5;
+}
