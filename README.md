@@ -2,6 +2,14 @@
 
 PackFlow is a polished one-page Bootstrap/Sass/Vanilla JavaScript prototype for a branded takeaway packaging e-commerce flow. It is inspired by companies like Limepack, where customers need to choose packaging, understand print options, see instant pricing, and continue toward checkout with confidence.
 
+## Project Preview
+
+This project is deployed and available online.
+
+**Live version:** [View the website](https://packflowlanding.netlify.app/)
+
+![Website preview](./Screenshot.png)
+
 ## Goal
 
 The project focuses on reducing friction in product customization and checkout readiness. Instead of pushing users into a slow manual sales flow, PackFlow guides them through product selection, customization, live pricing, and a clear order summary.
